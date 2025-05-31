@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { MainTabs } from './src/navigation/MainTabs';
 
 export default function App() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Golf Tracker App</Text>
-    </View>
+    <NavigationContainer>
+      <MainTabs />
+    </NavigationContainer>
   );
-} 
+}
