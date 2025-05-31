@@ -1,23 +1,77 @@
-# Links – Golf Taste Tracker (Figma Make Export)
+# Links Figma Code - Mobile App
 
-This repo contains the exported codebase from **Figma Make** for the project **Links** — a social golf scorecard app where users log rounds, rank courses, and build a personal taste profile.
+A React Native mobile application built with Expo.
 
-This repo will serve as the base for:
-- Debugging layout issues from Figma Make output
-- Refactoring components for clean HTML/CSS/JS
-- Potentially porting key layouts into SwiftUI or React Native
+## Setup
 
----
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npx expo start
+```
+
+3. Run on iOS simulator:
+```bash
+npx expo run:ios
+```
+
+4. Run on Android emulator:
+```bash
+npx expo run:android
+```
+
+## Project Structure
+
+```
+src/
+  ├── screens/         # Screen components
+  ├── components/      # Reusable components
+  │   └── ui/         # UI components
+  ├── utils/          # Utility functions
+  ├── hooks/          # Custom React hooks
+  └── types/          # TypeScript type definitions
+```
+
+## Development
+
+- Uses React Native with Expo
+- TypeScript for type safety
+- NativeWind for styling
+- React Navigation for routing
+
+## Building for Production
+
+1. Build for iOS:
+```bash
+eas build --platform ios
+```
+
+2. Build for Android:
+```bash
+eas build --platform android
+```
+
+## Contributing
+
+1. Create a new branch
+2. Make your changes
+3. Submit a pull request
+
+## License
+
+MIT
 
 ## 🧠 About the Product
 
 **Links** lets golfers:
 - Log rounds and tag courses (Public, Private, Muni, $$, etc.)
 - Compare two courses head-to-head
-- Build a personal “Top 5”
+- Build a personal "Top 5"
 - See where friends have played and what they liked
-
----
 
 ## 🔧 Project Setup
 
@@ -26,12 +80,10 @@ This repo was initialized with raw code from Figma Make. It may include:
 - Redundant styles or layout bugs
 - HTML with placeholder text or inconsistent structure
 
-You’ll use this as a foundation to:
+You'll use this as a foundation to:
 - Debug UI issues
 - Simplify structure
 - Migrate to real mobile code if needed
-
----
 
 ## 🧰 Next Steps
 
@@ -41,8 +93,6 @@ You’ll use this as a foundation to:
    - Optimize structure
    - Clean unused code
 3. Optionally convert into SwiftUI or React Native screen-by-screen
-
----
 
 ## 🧪 Live Tools to Use
 
