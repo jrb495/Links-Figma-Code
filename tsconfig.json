@@ -14,6 +14,37 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "checkbox.tsx",
+    "collapsible.tsx",
+    "context-menu.tsx",
+    "dialog.tsx",
+    "dropdown-menu.tsx",
+    "form.tsx",
+    "hover-card.tsx",
+    "label.tsx",
+    "menubar.tsx",
+    "navigation-menu.tsx",
+    "popover.tsx",
+    "progress.tsx",
+    "radio-group.tsx",
+    "scroll-area.tsx",
+    "select.tsx",
+    "separator.tsx",
+    "sheet.tsx",
+    "sidebar.tsx",
+    "slider.tsx",
+    "switch.tsx",
+    "tabs.tsx",
+    "toggle-group.tsx",
+    "toggle.tsx",
+    "tooltip.tsx",
+    "command.tsx",
+    "drawer.tsx",
+    "input-otp.tsx",
+    "pagination.tsx",
+    "resizable.tsx",
+    "sonner.tsx",
+    "src/components/ui/chart.tsx"
   ]
 }
