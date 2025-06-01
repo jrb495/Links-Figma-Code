@@ -1,7 +1,17 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '../../components/ui/Button.native';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { CoursesStackParamList } from '../../navigation/types';
 
 type Course = {
   id: string;
@@ -36,9 +46,27 @@ const mockCourses: Course[] = [
   },
 ];
 
+type CoursesScreenNavigationProp = NativeStackNavigationProp<
+  CoursesStackParamList,
+  'CoursesList'
+>;
+
 export default function CoursesScreen() {
+  const navigation = useNavigation<CoursesScreenNavigationProp>();
+
+  const handleAddCourse = () => {
+    navigation.navigate('AddCourse');
+  };
+
+  const handleCoursePress = (courseId: string) => {
+    navigation.navigate('CourseDetails', { courseId });
+  };
+
   const renderCourseItem = ({ item }: { item: Course }) => (
-    <View style={styles.courseItem}>
+    <TouchableOpacity
+      style={styles.courseItem}
+      onPress={() => handleCoursePress(item.id)}
+    >
       <View style={styles.courseInfo}>
         <Text style={styles.courseName}>{item.name}</Text>
         <Text style={styles.location}>{item.location}</Text>
@@ -48,23 +76,16 @@ export default function CoursesScreen() {
         </View>
       </View>
       {item.imageUrl && (
-        <Image 
-          source={{ uri: item.imageUrl }} 
-          style={styles.courseImage} 
-        />
+        <Image source={{ uri: item.imageUrl }} style={styles.courseImage} />
       )}
-    </View>
+    </TouchableOpacity>
   );
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Golf Courses</Text>
-        <Button 
-          onPress={() => {}} 
-          variant="default"
-          size="sm"
-        >
+        <Button onPress={handleAddCourse} variant="default" size="sm">
           Add Course
         </Button>
       </View>
