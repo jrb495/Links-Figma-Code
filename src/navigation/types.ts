@@ -24,13 +24,8 @@ export type RoundsStackParamList = {
 
 export type CoursesStackParamList = {
   CoursesList: undefined;
-  AddCourse: undefined;
-  CourseDetails: { courseId: string };
-  EditCourse: { courseId: string };
 };
 
 export type ProfileStackParamList = {
   ProfileMain: undefined;
-  EditProfile: undefined;
-  Settings: undefined;
-}; 
+};
